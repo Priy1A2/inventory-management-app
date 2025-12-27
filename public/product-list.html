@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List - Category</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Sales Screen</a>
+        <h1 id="categoryTitle">All Products in [Category Name]</h1>
+
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th>ID [cite: 58]</th>
+                    <th>Code [cite: 58]</th>
+                    <th>Product Name [cite: 58]</th>
+                    <th>Description [cite: 58]</th>
+                    <th>Price (₹) [cite: 58]</th>
+                    <th>Stock Qty</th>
+                    <th>Location [cite: 58]</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>P001</td>
+                    <td>CLO-101</td>
+                    <td>Red T-shirt (L)</td>
+                    <td>100% Cotton, Large Size</td>
+                    <td>499</td>
+                    <td>25</td>
+                    <td>Aisle 1, Shelf C</td>
+                    <td><button class="action-btn">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>P002</td>
+                    <td>GRO-205</td>
+                    <td>Organic Basmati Rice (5kg)</td>
+                    <td>Premium aged rice, 5kg bag</td>
+                    <td>750</td>
+                    <td>0 <span class="status-oos">(OOS)</span></td>
+                    <td>Warehouse Section</td>
+                    <td><button class="action-btn" disabled>Out of Stock</button></td>
+                </tr>
+                <tr>
+                    <td>P003</td>
+                    <td>STA-331</td>
+                    <td>Blue Ink Pen Set</td>
+                    <td>Pack of 10 smooth gel pens</td>
+                    <td>150</td>
+                    <td>5</td>
+                    <td>Aisle 5, Drawer 2</td>
+                    <td><button class="action-btn">Add to Cart</button></td>
+                </tr>
+            </tbody>
+            <tbody id="productListTableBody">
+                <tr><td colspan="8" style="text-align:center;">Loading products...</td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top: 20px;">*The full product details including ID, Code, Name, Description, and Price are visible here for confirmation before adding to the cart[cite: 58].</p>
+    </div>
+
+    <script src="js/app.js">
+        // Simple script to set the title dynamically
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category') || 'All Categories';
+        document.getElementById('categoryTitle').textContent = `All Products in ${category}`;
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List - Category</title>
+    <style>
+        /* Shared Styles (from index.html) */
+        :root {
+            --primary-color: #007bff;
+            --accent-color: #28a745;
+            --bg-light: #f8f9fa;
+            --text-dark: #343a40;
+        }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: var(--bg-light); color: var(--text-dark); }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { color: var(--primary-color); margin-bottom: 20px; }
+        .back-btn { display: inline-block; margin-bottom: 20px; color: var(--primary-color); text-decoration: none; font-weight: bold; }
+
+        /* Product Table */
+        .product-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .product-table th, .product-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .product-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+        .product-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        .status-oos { color: red; font-weight: bold; }
+        .action-btn { background-color: var(--accent-color); color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Sales Screen</a>
+        <h1 id="categoryTitle">All Products in [Category Name]</h1>
+
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th>ID [cite: 58]</th>
+                    <th>Code [cite: 58]</th>
+                    <th>Product Name [cite: 58]</th>
+                    <th>Description [cite: 58]</th>
+                    <th>Price (₹) [cite: 58]</th>
+                    <th>Stock Qty</th>
+                    <th>Location [cite: 58]</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>P001</td>
+                    <td>CLO-101</td>
+                    <td>Red T-shirt (L)</td>
+                    <td>100% Cotton, Large Size</td>
+                    <td>499</td>
+                    <td>25</td>
+                    <td>Aisle 1, Shelf C</td>
+                    <td><button class="action-btn">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>P002</td>
+                    <td>GRO-205</td>
+                    <td>Organic Basmati Rice (5kg)</td>
+                    <td>Premium aged rice, 5kg bag</td>
+                    <td>750</td>
+                    <td>0 <span class="status-oos">(OOS)</span></td>
+                    <td>Warehouse Section</td>
+                    <td><button class="action-btn" disabled>Out of Stock</button></td>
+                </tr>
+                <tr>
+                    <td>P003</td>
+                    <td>STA-331</td>
+                    <td>Blue Ink Pen Set</td>
+                    <td>Pack of 10 smooth gel pens</td>
+                    <td>150</td>
+                    <td>5</td>
+                    <td>Aisle 5, Drawer 2</td>
+                    <td><button class="action-btn">Add to Cart</button></td>
+                </tr>
+            </tbody>
+            <tbody id="productListTableBody">
+                <tr><td colspan="8" style="text-align:center;">Loading products...</td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top: 20px;">*The full product details including ID, Code, Name, Description, and Price are visible here for confirmation before adding to the cart[cite: 58].</p>
+    </div>
+
+    <script src="js/app.js">
+        // Simple script to set the title dynamically
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category') || 'All Categories';
+        document.getElementById('categoryTitle').textContent = `All Products in ${category}`;
+    </script>
+</body>
+</html> -->

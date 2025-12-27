@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockEase - Admin Dashboard</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Sales Screen</a>
+        <h1>📊 Admin & Management Dashboard</h1>
+
+        <div class="module-grid">
+            <div class="module-card">
+                <h2>📦 Product Inventory</h2>
+                <a href="#" id="addNewProductLink">➕ **Add New Product** (Your Request)</a>
+                <a href="admin-products.html">📝 **Manage All Products (CRUD)**</a>
+                <a href="#">📍 Manage Storage Locations</a>
+            </div>
+
+            <div class="module-card">
+                <h2>📈 Stock & Ordering</h2>
+                <a href="#reorder">🛒 **What To Order** (Reorder List)</a>
+                <a href="record-in.html">➡️ Record Incoming Stock (Purchase/Production)</a>
+                <a href="record-out.html">📉 Record Wastage/Consumption (Stock-Out)</a>
+            </div>
+
+            <div class="module-card">
+                <h2>📋 Reports & Analysis</h2>
+                <a href="reports-status.html">📊 **Stock Status Report**</a>
+                <a href="reports-movements.html">⏱️ **Stock Movement History**</a>
+                <a href="reports-valuation.html">💰 **Stock Valuation Report**</a>
+                <a href="reports-trends.html">🥇 **Most/Least Sold Items (Trends)**</a>
+            </div>
+
+            <div class="module-card">
+                <h2>⚙️ System & Audit</h2>
+                <a href="audit-users.html">👤 **User Management (Role-Based Access)**</a>
+                <a href="audit-trail.html">📝 **View Audit Trail**</a>
+                <a href="audit-maintenance.html">🔄 **System Maintenance**</a>
+            </div>
+        </div>
+
+        <h2 class="section-heading">🛒 What to Order (Reorder List)</h2>
+        <div class="reorder-controls">
+            <select>
+                <option>Filter by Category</option>
+                <option>Clothes</option>
+                <option>Grocery</option>
+            </select>
+            <select>
+                <option>Filter by Status</option>
+                <option>OUT OF STOCK</option>
+                <option>LOW STOCK</option>
+            </select>
+        </div>
+
+        <table class="product-table reorder-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Status</th>
+                    <th>Product Name</th>
+                    <th>Code</th>
+                    <th>Current Stock</th>
+                    <th>Reorder Point</th>
+                    <th>Suggested Order Qty</th>
+                    <th>Last Vendor</th>
+                    <th>Last Price (₹)</th>
+                </tr>
+            </thead>
+            <tbody id="reorderTableBody">
+                <tr>
+                    <td colspan="9" style="text-align:center;">Loading reorder list...</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: right; margin-top: 20px;">
+            <button class="reorder-action-btn">✅ Add Selected Items to Draft Purchase Order</button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

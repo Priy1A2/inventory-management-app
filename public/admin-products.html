@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Manage Products</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <a href="admin.html" class="back-btn">← Back to Dashboard</a>
+        <h1 id="pageTitle">📝 Manage All Products (CRUD)</h1>
+        
+        [cite_start]<p>This page allows Administrators to **View, Edit, and Delete** products (CRUD operations)[cite: 27].</p>
+
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price (₹)</th>
+                    <th>Stock Qty</th>
+                    <th>Location</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="adminProductsTableBody">
+                <tr><td colspan="7" style="text-align:center;">Loading all products...</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

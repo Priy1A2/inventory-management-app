@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockEase - Sales & Billing</title>
+    <link rel="stylesheet" href="styles/main.css"> 
+</head>
+<body>
+
+    <div class="header">
+        <div class="search-container">
+            <input type="text" placeholder="Search product name or scan barcode..." id="productSearch">
+            <button>🔎 Search</button>
+        </div>
+    </div>
+
+    <div class="sales-layout"> 
+        
+        <div class="product-area">
+            <p style="text-align: right;"><a href="admin.html">Go to Admin Dashboard (Managers/Owners)</a></p>
+
+            <h3 class="section-heading">Shop Categories</h3>
+            <div class="categories">
+                <a href="product-list.html?category=Clothes" class="category-btn">👗 Clothes</a>
+                <a href="product-list.html?category=Grocery" class="category-btn">🛒 Grocery</a>
+                <a href="product-list.html?category=Stationery" class="category-btn">📚 Stationery</a>
+                <a href="product-list.html?category=Food" class="category-btn">🍔 Food</a>
+                <a href="product-list.html?category=Makeup" class="category-btn">💄 Makeup</a>
+                <a href="product-list.html?category=Shoes" class="category-btn">👟 Shoes</a>
+            </div>
+
+            <h3 class="section-heading">🔥 Quick-Pick: Fast Moving Items</h3>
+            <div class="product-grid" id="fastMovingItems">
+                <p>Loading items...</p>
+            </div>
+        </div>
+
+        <div class="cart-panel">
+            <h2>🧾 Sales Cart</h2>
+            <div class="cart-list" id="cartList">
+                </div>
+            <div class="cart-total">
+                <h3 id="cartTotal">Total: ₹0</h3>
+            </div>
+            <button class="checkout-btn">Complete Sale & Bill</button>
+            <p style="margin-top: 10px; font-size: 0.8em; text-align: center;">(Triggers automatic stock update)</p>
+        </div>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <div class="header">
+        <div class="search-container">
+            <input type="text" placeholder="Search product name or scan barcode..." id="productSearch">
+            <button>🔎 Search</button>
+        </div>
+    </div>
+
+    <div class="sales-layout"> <div class="product-area">
+            <h3 class="section-heading">Shop Categories</h3>
+            <div class="categories">
+                <a href="product-list.html?category=Clothes" class="category-btn">👗 Clothes</a>
+                <a href="product-list.html?category=Grocery" class="category-btn">🛒 Grocery</a>
+                <a href="product-list.html?category=Stationery" class="category-btn">📚 Stationery</a>
+                <a href="product-list.html?category=Food" class="category-btn">🍔 Food</a>
+                <a href="product-list.html?category=Makeup" class="category-btn">💄 Makeup</a>
+                <a href="product-list.html?category=Shoes" class="category-btn">👟 Shoes</a>
+            </div>
+
+            </div>
+
+        <div class="cart-panel"> ... </div>
+    </div>
+
+    <div class="product-area">
+        <p style="text-align: right;"><a href="admin.html">Go to Admin Dashboard (Managers/Owners)</a></p>
+
+        <h3 class="section-heading">Shop Categories</h3>
+        <div class="categories">
+            <a href="product-list.html?category=Clothes" class="category-btn">👗 Clothes</a>
+            <a href="product-list.html?category=Food" class="category-btn">🍔 Food</a>
+            <a href="product-list.html?category=Stationery" class="category-btn">📚 Stationery</a>
+            <a href="product-list.html?category=Grocery" class="category-btn">🛒 Grocery</a>
+            <a href="product-list.html?category=Makeup" class="category-btn">💄 Makeup</a>
+            <a href="product-list.html?category=Shoes" class="category-btn">👟 Shoes</a>
+        </div>
+
+        <h3 class="section-heading">🔥 Quick-Pick: Fast Moving Items</h3>
+        <div class="product-grid" id="fastMovingItems">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/150x100?text=Jeans" alt="Product Image">
+                <h4>Slim Fit Jeans</h4>
+                <p class="price">₹1,999</p>
+                <p style="font-size: 0.9em; color: #555;">Stock: 45</p>
+                <button onclick="addToCart('Jeans', 1999)">Add to Cart</button>
+            </div>
+             <div class="product-card">
+                <img src="https://via.placeholder.com/150x100?text=Milk" alt="Product Image">
+                <h4>Fresh Milk (1L)</h4>
+                <p class="price">₹65</p>
+                <p style="font-size: 0.9em; color: #555;">Stock: 120</p>
+                <button onclick="addToCart('Milk', 65)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/150x100?text=Pencils" alt="Product Image">
+                <h4>Pack of Pencils</h4>
+                <p class="price">₹120</p>
+                <p style="font-size: 0.9em; color: #555;">Stock: 300</p>
+                <button onclick="addToCart('Pencils', 120)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-panel">
+        <h2>🧾 Sales Cart</h2>
+        <div class="cart-list" id="cartList">
+            <div class="cart-item">
+                <span>Milk (1 x ₹65)</span>
+                <span>₹65</span>
+            </div>
+        </div>
+        <div class="cart-total">
+            <h3 id="cartTotal">Total: ₹65</h3>
+        </div>
+        <button class="checkout-btn">Complete Sale & Bill</button>
+        <p style="margin-top: 10px; font-size: 0.8em; text-align: center;">(Triggers automatic stock update [cite: 5, 31])</p>
+    </div>
+
+    <script src="js/app.js">
+        let cart = [{name: 'Milk', price: 65, quantity: 1}]; // Start with a sample item
+
+        function renderCart() {
+            const cartList = document.getElementById('cartList');
+            const cartTotalElement = document.getElementById('cartTotal');
+            cartList.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.innerHTML = `
+                    <span>${item.name} (${item.quantity} x ₹${item.price})</span>
+                    <span>₹${item.price * item.quantity}</span>
+                `;
+                cartList.appendChild(itemElement);
+                total += item.price * item.quantity;
+            });
+
+            cartTotalElement.textContent = `Total: ₹${total}`;
+        }
+
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+
+            alert(`${name} added to cart!`);
+            renderCart();
+        }
+
+        // Initial render
+        renderCart();
+    </script>
+</body>
+</html>

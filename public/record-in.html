@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Record Incoming Stock</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <a href="admin.html" class="back-btn">← Back to Dashboard</a>
+        <h1 class="section-heading">➡️ Record Incoming Stock (Purchase/Production)</h1>
+        
+        <form id="stockInForm" style="max-width: 500px; background: white; padding: 20px; border-radius: 8px;">
+            <div style="margin-bottom: 15px;">
+                <label for="productCode">Product Code/Name:</label>
+                <input type="text" id="productCode" required style="width: 100%; padding: 8px; margin-top: 5px;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="quantity">Quantity Received (IN):</label>
+                <input type="number" id="quantity" required min="1" style="width: 100%; padding: 8px; margin-top: 5px;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="batchNo">Batch Number (Optional):</label>
+                <input type="text" id="batchNo" style="width: 100%; padding: 8px; margin-top: 5px;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="expiryDate">Expiry Date (Optional):</label>
+                <input type="date" id="expiryDate" style="width: 100%; padding: 8px; margin-top: 5px;">
+            </div>
+            
+            <button type="submit" class="action-btn" style="width: 100%;">Record Stock IN</button>
+        </form>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
